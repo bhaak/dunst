@@ -529,7 +529,9 @@ static void render_content(cairo_t *c, struct colored_layout *cl, int width)
                 unsigned int image_width = cairo_image_surface_get_width(cl->icon),
                              image_height = cairo_image_surface_get_height(cl->icon),
                              image_x,
-                             image_y = settings.padding + h/2 - image_height/2;
+                             image_y;
+                // icon at the top; TODO configurable
+                image_y = settings.padding;
 
                 if (settings.icon_position == ICON_LEFT) {
                         image_x = settings.h_padding;
